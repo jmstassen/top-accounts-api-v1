@@ -3,5 +3,5 @@ class AccountSerializer < ActiveModel::Serializer
   # has_many :person_accounts
   has_many :people, through: :person_accounts, serializer: PersonSerializer
 
-  attributes :account_name
+  attributes :account_name, :id
 end
