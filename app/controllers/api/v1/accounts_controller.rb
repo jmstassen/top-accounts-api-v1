@@ -1,5 +1,5 @@
-    class AccountsController < ApplicationController
-      require_relative '../serializers/account_serializer'
+    class Api::V1::AccountsController < ApplicationController
+      require_relative '../../../serializers/account_serializer'
 
       def create
         account = Account.create(account_params)
