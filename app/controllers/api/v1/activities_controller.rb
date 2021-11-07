@@ -5,7 +5,7 @@ class Api::V1::ActivitiesController < ApplicationController
 #   api/v1/accounts/1/activities
 
   def index
-    activities = @account.activities
+    activities = Activity.all
     render json: activities
   end
     
