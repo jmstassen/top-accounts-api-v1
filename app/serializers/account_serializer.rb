@@ -1,7 +1,11 @@
 class AccountSerializer < ActiveModel::Serializer
-  has_many :activities, serializer: ActivitySerializer
+  attributes :account_name, :id
+  has_many :activities
   # has_many :person_accounts
   has_many :people, through: :person_accounts, serializer: PersonSerializer
 
-  attributes :account_name, :id
+  # def activities
+  #   ActiveModelSerializers::SerializableResource.new(object.activities, each_serializer: ActivitySerializer)
+  # end
+
 end
