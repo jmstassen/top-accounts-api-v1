@@ -17,7 +17,7 @@ class Api::V1::ActivitiesController < ApplicationController
   def create
     activity = @account.activities.new(activity_params)
     if activity.save
-      render json: activity
+      render json: @account
     else
       render json: {error: 'Could not create activity'}
     end
@@ -29,6 +29,7 @@ class Api::V1::ActivitiesController < ApplicationController
   def destroy
     activity = Activity.find(params[:id])
     activity.destroy
+    render json: @account
   end
     
   private
