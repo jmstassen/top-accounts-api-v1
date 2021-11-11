@@ -26,6 +26,7 @@ class Api::V1::AccountsController < ApplicationController
   def destroy
     account = Account.find(params[:id])
     account.destroy
+    render json: account.id
   end
 
   private
