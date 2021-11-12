@@ -24,6 +24,12 @@ class Api::V1::ActivitiesController < ApplicationController
   end
     
   def update
+    activity = Activity.find(params[:id])
+    activity.activity_date = params[:activity_date]
+    activity.activity_type = params[:activity_type]
+    activity.activity_name = params[:activity_name]
+    activity.save
+    render json: @account
   end
   
   def destroy
