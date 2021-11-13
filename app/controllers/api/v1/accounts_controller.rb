@@ -21,6 +21,10 @@ class Api::V1::AccountsController < ApplicationController
   end
 
   def update
+    account = Account.find(params[:id])
+    account.account_name = params[:account_name]
+    account.save
+    render json: account
   end
 
   def destroy
