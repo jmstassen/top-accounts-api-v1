@@ -2,8 +2,6 @@ class Api::V1::ActivitiesController < ApplicationController
   
   before_action :set_account
   
-#   api/v1/accounts/1/activities
-
   def index
     activities = Activity.all
     render json: activities
